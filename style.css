@@ -167,6 +167,7 @@ textarea {
 
 .goodie-filter-grid {
 	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 1.5rem;
 }
 
 .goodie-grid,
@@ -178,6 +179,7 @@ textarea {
 
 .goodie-grid {
 	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 1rem;
 }
 
 .goodie-product-grid,
@@ -194,6 +196,10 @@ textarea {
 .goodie-card {
 	text-decoration: none;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+	min-height: 165px;
 }
 
 .goodie-card:hover,
@@ -206,6 +212,36 @@ textarea {
 .goodie-product-card__title {
 	margin: 0 0 0.5rem;
 	font-size: 1.25rem;
+}
+
+.goodie-card__title {
+	margin-bottom: 0;
+	line-height: 1.2;
+}
+
+.goodie-card__meta {
+	margin: 0;
+}
+
+.goodie-panel {
+	padding: clamp(1.5rem, 2.5vw, 2rem);
+	margin-bottom: 0.25rem;
+}
+
+.goodie-field {
+	margin: 0;
+}
+
+.goodie-field label {
+	margin-bottom: 0.6rem;
+}
+
+.goodie-actions {
+	margin-top: 0.5rem;
+}
+
+.goodie-grid .goodie-pill-list {
+	margin-top: auto;
 }
 
 .goodie-pill-list {
@@ -321,17 +357,60 @@ input[type="submit"]:hover {
 .goodie-single-layout {
 	grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
 	align-items: start;
+	gap: 1.75rem;
+	margin-top: 0.5rem;
+}
+
+.goodie-single-products,
+.goodie-single-summary {
+	padding: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.goodie-single-products h2,
+.goodie-single-summary h2 {
+	margin: 0 0 1.25rem;
+	line-height: 1.1;
+}
+
+.goodie-single-summary p {
+	margin: 0;
+}
+
+.goodie-single-summary p + p,
+.goodie-single-summary p + form,
+.goodie-single-summary h2 + p {
+	margin-top: 1rem;
+}
+
+.goodie-single-summary a {
+	overflow-wrap: anywhere;
+}
+
+.goodie-add-to-cart-form {
+	margin-top: 0.25rem;
+}
+
+.goodie-single-products__grid {
+	align-items: stretch;
 }
 
 .goodie-product-card {
 	background: linear-gradient(180deg, #ffffff, #fff8f0);
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
 }
 
 .goodie-product-card__image {
-	margin-bottom: 1rem;
 	border-radius: 18px;
 	overflow: hidden;
 	background: #fff4e8;
+	aspect-ratio: 1 / 1;
+}
+
+.goodie-product-card__title,
+.goodie-product-card__price {
+	margin: 0;
 }
 
 .goodie-pagination {
@@ -376,5 +455,23 @@ input[type="submit"]:hover {
 
 	.goodie-single-layout {
 		grid-template-columns: 1fr;
+		gap: 1.25rem;
+	}
+
+	.goodie-filter-grid,
+	.goodie-grid {
+		gap: 1rem;
+	}
+
+	.goodie-card {
+		min-height: auto;
+		padding: 1rem;
+	}
+
+	.goodie-single-products,
+	.goodie-single-summary,
+	.goodie-hero,
+	.goodie-panel {
+		padding: 1.25rem;
 	}
 }
