@@ -62,10 +62,12 @@ $categories = is_wp_error( $categories ) ? array() : $categories;
 				<?php
 				$product_count = count( goodie_collections_get_product_ids( get_the_ID() ) );
 				$terms         = get_the_terms( get_the_ID(), 'goodie_category' );
+				$author_name   = get_the_author();
 				?>
 				<a class="goodie-card" href="<?php the_permalink(); ?>">
 					<p class="goodie-card__meta"><?php echo esc_html( get_the_date() ); ?></p>
 					<h2 class="goodie-card__title"><?php the_title(); ?></h2>
+					<p class="goodie-card__meta"><?php echo esc_html( sprintf( __( 'Created by %s', 'goodie-collections' ), $author_name ) ); ?></p>
 					<p class="goodie-card__meta"><?php echo esc_html( sprintf( _n( '%d candy', '%d candies', $product_count, 'goodie-collections' ), $product_count ) ); ?></p>
 					<?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) : ?>
 						<ul class="goodie-pill-list">

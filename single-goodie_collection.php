@@ -12,9 +12,11 @@ get_header();
 		<?php
 		$products = goodie_collections_get_collection_products( get_the_ID() );
 		$terms    = get_the_terms( get_the_ID(), 'goodie_category' );
+		$author   = get_the_author();
 		?>
 		<div class="goodie-hero">
 			<p class="goodie-meta"><?php echo esc_html( get_the_date() ); ?></p>
+			<p class="goodie-meta"><?php echo esc_html( sprintf( __( 'Created by %s', 'goodie-collections' ), $author ) ); ?></p>
 			<h1 class="goodie-title"><?php the_title(); ?></h1>
 			<p class="goodie-subtitle"><?php echo esc_html__( 'Share this mix or add the full candy line-up to your cart in one step.', 'goodie-collections' ); ?></p>
 			<?php if ( isset( $_GET['goodie_collection_created'] ) ) : ?>
