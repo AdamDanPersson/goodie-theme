@@ -1,0 +1,380 @@
+/*
+Theme Name: Goodie Theme
+Theme URI: https://goodie.local
+Author: Goodie
+Description: A colorful WooCommerce theme for the Goodie candy shop.
+Version: 1.0.0
+Text Domain: goodie-collections
+*/
+
+:root {
+	--goodie-bg: #fff8ef;
+	--goodie-surface: #ffffff;
+	--goodie-surface-alt: #fff1db;
+	--goodie-text: #3b2346;
+	--goodie-muted: #7a5c83;
+	--goodie-primary: #ff5f6d;
+	--goodie-secondary: #ffb347;
+	--goodie-accent: #42c6b4;
+	--goodie-border: #f3d8c0;
+	--goodie-shadow: 0 22px 50px rgba(138, 76, 107, 0.12);
+	--goodie-radius: 24px;
+	--goodie-max-width: 1180px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+	background:
+		radial-gradient(circle at top left, rgba(255, 179, 71, 0.22), transparent 32%),
+		radial-gradient(circle at top right, rgba(66, 198, 180, 0.18), transparent 26%),
+		linear-gradient(180deg, #fffaf4 0%, var(--goodie-bg) 100%);
+	color: var(--goodie-text);
+	line-height: 1.6;
+}
+
+a {
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+.goodie-site-header,
+.goodie-site-footer {
+	padding: 1.5rem;
+}
+
+.goodie-site-header {
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	backdrop-filter: blur(14px);
+	background: rgba(255, 248, 239, 0.84);
+	border-bottom: 1px solid rgba(243, 216, 192, 0.9);
+}
+
+.goodie-site-header__inner,
+.goodie-site-footer__inner,
+.goodie-shell,
+.goodie-template {
+	width: min(calc(100% - 2rem), var(--goodie-max-width));
+	margin: 0 auto;
+}
+
+.goodie-branding {
+	font-size: 1.4rem;
+	font-weight: 700;
+	text-decoration: none;
+	letter-spacing: 0.03em;
+}
+
+.goodie-site-footer {
+	margin-top: 3rem;
+	background: #fff0e1;
+	border-top: 1px solid var(--goodie-border);
+	color: var(--goodie-muted);
+}
+
+.goodie-template {
+	padding: 3rem 0 4rem;
+}
+
+.goodie-hero,
+.goodie-panel,
+.goodie-card,
+.goodie-form-wrapper,
+.goodie-product-card,
+.goodie-empty,
+.goodie-single-summary,
+.goodie-single-products {
+	background: var(--goodie-surface);
+	border: 1px solid var(--goodie-border);
+	border-radius: var(--goodie-radius);
+	box-shadow: var(--goodie-shadow);
+}
+
+.goodie-hero,
+.goodie-panel,
+.goodie-single-layout,
+.goodie-form-wrapper,
+.goodie-empty {
+	padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.goodie-hero {
+	position: relative;
+	overflow: hidden;
+	background: linear-gradient(135deg, rgba(255, 95, 109, 0.12), rgba(255, 179, 71, 0.18) 48%, rgba(66, 198, 180, 0.16));
+	margin-bottom: 2rem;
+}
+
+.goodie-hero::after {
+	content: "";
+	position: absolute;
+	inset: auto -50px -70px auto;
+	width: 220px;
+	height: 220px;
+	background: radial-gradient(circle, rgba(255, 95, 109, 0.22), transparent 65%);
+	pointer-events: none;
+}
+
+.goodie-title {
+	margin: 0 0 0.5rem;
+	font-size: clamp(2rem, 4vw, 3.5rem);
+	line-height: 1.05;
+}
+
+.goodie-subtitle,
+.goodie-meta,
+.goodie-selection-count,
+.goodie-site-footer p,
+.goodie-card__meta,
+.goodie-product-card__price {
+	color: var(--goodie-muted);
+}
+
+.goodie-filter-form,
+.goodie-collection-form,
+.goodie-add-to-cart-form {
+	display: grid;
+	gap: 1rem;
+}
+
+.goodie-filter-grid,
+.goodie-single-layout {
+	display: grid;
+	gap: 1.25rem;
+}
+
+.goodie-filter-grid {
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.goodie-grid,
+.goodie-product-grid,
+.goodie-single-products__grid {
+	display: grid;
+	gap: 1.25rem;
+}
+
+.goodie-grid {
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.goodie-product-grid,
+.goodie-single-products__grid {
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.goodie-card,
+.goodie-product-card,
+.goodie-product-option {
+	padding: 1.25rem;
+}
+
+.goodie-card {
+	text-decoration: none;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.goodie-card:hover,
+.goodie-card:focus-visible {
+	transform: translateY(-4px);
+	box-shadow: 0 28px 60px rgba(138, 76, 107, 0.18);
+}
+
+.goodie-card__title,
+.goodie-product-card__title {
+	margin: 0 0 0.5rem;
+	font-size: 1.25rem;
+}
+
+.goodie-pill-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.goodie-pill {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.4rem 0.8rem;
+	background: var(--goodie-surface-alt);
+	border-radius: 999px;
+	font-size: 0.95rem;
+}
+
+.goodie-product-option {
+	display: grid;
+	gap: 0.5rem;
+	cursor: pointer;
+	background: var(--goodie-surface-alt);
+	border: 1px solid transparent;
+	border-radius: 18px;
+}
+
+.goodie-product-option:has(input:checked) {
+	background: rgba(66, 198, 180, 0.12);
+	border-color: rgba(66, 198, 180, 0.35);
+}
+
+.goodie-product-option input {
+	accent-color: var(--goodie-primary);
+}
+
+.goodie-product-option__name {
+	font-weight: 700;
+}
+
+.goodie-field label,
+.goodie-collection-form label,
+.goodie-products-fieldset legend {
+	display: block;
+	margin-bottom: 0.45rem;
+	font-weight: 700;
+}
+
+input[type="text"],
+input[type="search"],
+select,
+textarea {
+	width: 100%;
+	padding: 0.85rem 1rem;
+	border-radius: 14px;
+	border: 1px solid var(--goodie-border);
+	background: #fffdf9;
+	color: var(--goodie-text);
+}
+
+button,
+.goodie-button,
+input[type="submit"] {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.95rem 1.4rem;
+	border: 0;
+	border-radius: 999px;
+	background: linear-gradient(135deg, var(--goodie-primary), var(--goodie-secondary));
+	color: #ffffff;
+	font-weight: 700;
+	cursor: pointer;
+	text-decoration: none;
+	box-shadow: 0 14px 28px rgba(255, 95, 109, 0.22);
+}
+
+button:hover,
+.goodie-button:hover,
+input[type="submit"]:hover {
+	filter: brightness(1.04);
+}
+
+.goodie-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.goodie-empty {
+	text-align: center;
+}
+
+.goodie-notice {
+	padding: 1rem 1.2rem;
+	border-radius: 16px;
+	margin-bottom: 1rem;
+}
+
+.goodie-notice--error {
+	background: rgba(255, 95, 109, 0.12);
+	color: #a33553;
+}
+
+.goodie-notice--success {
+	background: rgba(66, 198, 180, 0.14);
+	color: #1f7669;
+}
+
+.goodie-single-layout {
+	grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+	align-items: start;
+}
+
+.goodie-product-card {
+	background: linear-gradient(180deg, #ffffff, #fff8f0);
+}
+
+.goodie-product-card__image {
+	margin-bottom: 1rem;
+	border-radius: 18px;
+	overflow: hidden;
+	background: #fff4e8;
+}
+
+.goodie-pagination {
+	margin-top: 2rem;
+}
+
+.goodie-pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.5rem;
+	height: 2.5rem;
+	margin-right: 0.4rem;
+	border-radius: 999px;
+	background: #ffffff;
+	border: 1px solid var(--goodie-border);
+	text-decoration: none;
+}
+
+.screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+@media (max-width: 768px) {
+	.goodie-template {
+		padding-top: 1.5rem;
+	}
+
+	.goodie-site-header,
+	.goodie-site-footer {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.goodie-single-layout {
+		grid-template-columns: 1fr;
+	}
+}
